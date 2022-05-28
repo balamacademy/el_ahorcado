@@ -1,46 +1,52 @@
-# Polinomios
-Un polinomio de grado n es una función matemática de la forma:
+# El Ahorcado
+Desarrolle un programa para jugar al popular juego **elahorcado**, el cual consiste en un personaje, el cual está a punto de ser ejecutado.
 
-![image](https://user-images.githubusercontent.com/5318519/170802456-a10bcc98-d6bb-4c8e-8414-32ccbbbf437d.png)
+Para salvarlo es necesario adivinar una palabra, de la cual sólo se conoce su longitud. El jugador debe ir eligiendo letra por letra, de modo de ir completando la palabra.
 
-donde x es el parámetro y a<sub>0</sub>, a<sub>1</sub>, … , a<sub>n</sub> son números reales dados.
+Si el jugador se equivoca en una letra, es decir, la letra seleccionada no pertenece a la **palabra** a adivinar, el personaje pierde alguna parte de su cuerpo (un brazo, una pierna, el tronco, etc).
 
-Algunos ejemplos de polinomios son:
+Se puede jugar hasta que el personaje pierda la cabeza, el último resto de su trágica vida.
 
-![image](https://user-images.githubusercontent.com/5318519/170802537-dc5398b6-42d4-4cdb-a1f3-77b7964464bc.png)
+Lea cada letra de la palabra que debe adivinarse en elementos sucesivos de un string llamado palabra. El jugador debe adivinar las letras que pertenecen a la palabra y el programa debe terminar cuando todas las letras se hayan adivinado, es decir, ganar el juego, o bien se haya cometido un número establecido de desaciertos, es decir, gana el computador.
 
-Los grados de estos polinomios son, respectivamente, 2, 1, 5 y 80.
+Observaciones:
 
-Evaluar un polinomio significa reemplazar x por un valor y obtener el resultado. Por ejemplo, si evaluamos el polinomio p en el valor x=3, obtenemos el resultado:
+- Utilice un string para anotar las soluciones.
+- La palabra a adivinar la pueden poner fija o ingresarla al inicio del programa.
+- Asigne el caracter “_” a cada elemento del string, y cada vez que se adivine una letra, substituya el caracter por la letra correspondiente.
+- El programa debe realizarse utilzando **funciones**
+- Considere las siguientes partes del cuerpo del **ahorcado**:
+  - pierna derecha
+  - pierna izquierda
+  - brazo derecho
+  - brazo izquierdo
+  - tronco
+  - cabeza
 
-p(3)=1+2⋅3+3<sup>2</sup>=16
-
-Un polinomio puede ser representado como una lista con los valores a<sub>0</sub>, a<sub>1</sub>, … , a<sub>n</sub>. Por ejemplo, los polinomios anteriores pueden ser representados así en un programa:
-
-![image](https://user-images.githubusercontent.com/5318519/170802594-b7d23741-97e2-46b1-9bc7-b0ad2e71b557.png)
-
-Observa que la posición (indice) en el arreglo es igual a la potencia, y que los valores son los coeficientes. Por lo tanto para el ultimo ejemplo, deberas tener un arreglo de 81 posiciones y solo la posicion 40 y 80 tendran un valor el 5 y 2 respectivamente.
-
-1. Escriba la función grado(p) que entregue el grado de un polinomio:
 ```
->>> grado(r)
-5
->>> grado(s)
-80
-```
-2. Escriba la función evaluar(p, x) que evalúe el polinomio p (representado como una lista) en el valor x:
-```
->>> evaluar(p, 3)
-16
->>> evaluar(q, 0.0)
-4.0
->>> evaluar(r, 1.1)
--2.82347
->>> evaluar([4, 3, 1], 3.14)
-23.2796
-```
-3. Escriba la función sumar_polinomios(p1, p2) que entregue la suma de dos polinomios:
-```
->>> sumar_polinomios(p, r)
-[0, 2, 1, -5, 0, 3]
+Ingrese la palabra: caramelo
+Comienza el juego!
+" _ _ _ _ _ _ _ _ "
+Ingrese letra: a
+" _ a _ a _ _ _ _ "
+Ingrese letra: e
+" _ a _ a _ e _ _ "
+Ingrese letra: i
+Pierde "pierna derecha"
+Ingrese letra: o
+" _ a _ a _ e _ o "
+Ingrese letra: b
+Pierde "pierna izquierda"
+Ingrese letra: c
+" c a _ a _ e _ o "
+Ingrese letra: d
+Pierde "brazo derecho"
+Ingrese letra: f
+Pierde "brazo izquierdo"
+Ingrese letra: g
+Pierde "tronco"
+Ingrese letra: h
+Pierde "cabeza"
+
+Haz perdido el juego!
 ```
